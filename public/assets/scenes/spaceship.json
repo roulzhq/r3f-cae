@@ -1,0 +1,108 @@
+{
+  "name": "Spaceship",
+  "playerPosition": {
+    "x": 0,
+    "y": 1,
+    "z": 0
+  },
+  "blocks": [
+    {
+      "id": "0c87e869-945b-47aa-8a27-ab3f7b108971",
+      "type": "platform_side",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "de107f4c-80f2-45da-9327-533362be2913",
+      "type": "platform_side",
+      "position": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "c4bd0b45-5fc2-4cda-9279-e6d350b9cc0e",
+      "type": "platform_center",
+      "position": {
+        "x": 2,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "da156f62-69be-4e1e-a069-92e0c52ca261",
+      "type": "platform_center",
+      "position": {
+        "x": 3,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "3a7c7a50-f955-4e47-a8b2-c2d603d2e3cc",
+      "type": "platform_center",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 1
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "96142342-86c8-490d-b509-5a9e4142e788",
+      "type": "platform_center",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 2
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "id": "c8f28536-24fa-4328-bf14-aaac0a542f4c",
+      "type": "platform_center",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 3
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  ]
+}
