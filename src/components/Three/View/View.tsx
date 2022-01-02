@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { GizmoHelper, GizmoViewport, OrbitControls, Sky } from "@react-three/drei";
+import { GizmoHelper, GizmoViewport, OrbitControls, Sky, Stars, Stats } from "@react-three/drei";
 
 import "./View.scss";
 import Scene from "../Scene/Scene";
@@ -15,7 +15,7 @@ export default function View(): JSX.Element {
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
 
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         <group>
           <Camera />
           <Player />
@@ -23,8 +23,12 @@ export default function View(): JSX.Element {
 
         <Scene />
 
-        <Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} />
+        {/* <Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} /> */}
         {/* <Clouds /> */}
+
+        <Stars />
+
+        <Stats />
 
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport axisColors={["red", "green", "blue"]} labelColor="black" />

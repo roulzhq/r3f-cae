@@ -17,20 +17,3 @@ export function reshapeArray(array: any[], dimension: number) {
   }
   return tmp;
 }
-
-export async function loadHdf5(path: string) {
-  try {
-    const fileId = makeid(16);
-
-    const res = await fetch(path);
-    const ab = await res.arrayBuffer();
-
-    hdf5.FS.writeFile(fileId, new Uint8Array(ab));
-
-    let f = new hdf5.File(fileId, "r");
-
-    return f;
-  } catch (error) {
-    console.log("Loading HDF5 file failed:", error);
-  }
-}

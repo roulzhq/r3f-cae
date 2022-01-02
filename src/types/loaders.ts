@@ -5,7 +5,7 @@ export class SceneLoader {
   public static scene: Scene;
 
   public static async load(name: string): Promise<Scene> {
-    const res = await fetch(`/assets/scenes/${name}.json`);
+    const res = await fetch(`/assets/scenes/${name}/scene.json`);
     const scene = await res.json();
 
     this.setScene(scene);

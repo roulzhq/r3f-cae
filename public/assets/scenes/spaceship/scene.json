@@ -1,0 +1,24 @@
+{
+  "name": "Spaceship",
+  "playerPosition": {
+    "x": 0,
+    "y": 1,
+    "z": 0
+  },
+  "blocks": [
+    {
+      "id": "0c87e869-945b-47aa-8a27-ab3f7b108971",
+      "type": "base",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 3.141592653589793,
+        "z": 0
+      }
+    }
+  ]
+}

@@ -18,8 +18,6 @@ export default function Player(): JSX.Element {
 
   const player = usePlayerStore((state) => state);
 
-  console.log(player.position);
-
   const ref = useRef<THREE.Object3D>();
 
   const toggleMovement = (keyCode: string, state: boolean) => {
@@ -56,10 +54,22 @@ export default function Player(): JSX.Element {
     let posX = player.position.x;
     let posZ = player.position.z;
 
-    if (player.movement.forward) posZ -= 0.1;
-    if (player.movement.backward) posZ += 0.1;
-    if (player.movement.left) posX -= 0.1;
-    if (player.movement.right) posX += 0.1;
+    if (player.movement.forward) {
+      posZ -= 0.1;
+      player.setRotation(0, 0, 0);
+    }
+    if (player.movement.backward) {
+      posZ += 0.1;
+      player.setRotation(0, Math.PI, 0);
+    }
+    if (player.movement.left) {
+      posX -= 0.1;
+      player.setRotation(0, Math.PI / 2, 0);
+    }
+    if (player.movement.right) {
+      posX += 0.1;
+      player.setRotation(0, Math.PI / 2, 0);
+    }
 
     if (posX !== player.position.x || posZ !== player.position.z) {
       player.setPosition(posX, undefined, posZ);

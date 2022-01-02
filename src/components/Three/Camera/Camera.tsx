@@ -2,8 +2,8 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { useEffect, useMemo, useRef } from "react";
 import { usePlayerStore } from "store";
 
-const CAMERA_HEIGHT = 10;
-const CAMERA_ANGLE = 6;
+const CAMERA_HEIGHT = 15;
+const CAMERA_ANGLE = 8;
 
 export default function Camera() {
   const playerPosition = usePlayerStore((state) => state.position);
