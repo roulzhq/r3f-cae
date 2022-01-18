@@ -7,10 +7,13 @@ import Scene from "../Scene/Scene";
 import Player from "../Player/Player";
 import Camera from "../Camera/Camera";
 import Clouds from "../Clouds/Clouds";
+import LoadingScreen from "components/UI/LoadingScreen/LoadingScreen";
+import HUD from "components/UI/HUD/HUD";
 
 export default function View(): JSX.Element {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingScreen />}>
+      <HUD />
       <Canvas className="view">
         <ambientLight />
         <pointLight position={[10, 10, 10]} />

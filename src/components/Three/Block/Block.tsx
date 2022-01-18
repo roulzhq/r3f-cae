@@ -16,7 +16,7 @@ interface BlockProps {
 export default function Block({ id, position, rotation, type }: BlockProps): JSX.Element {
   const ref = useRef<THREE.Object3D>();
 
-  const modelPath = BlockLoader.getModel(type);
+  const modelPath = BlockLoader.getModelPath(type);
   const { scene } = useGLTF(modelPath);
   const copiedScene = useMemo(() => scene.clone(), [scene]);
 

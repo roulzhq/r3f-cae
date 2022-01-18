@@ -4,12 +4,15 @@ import produce from "immer";
 import { MovementDirection } from "types/player";
 import { Vector3 } from "types";
 
+const INVENTORY_SIZE = 32;
+
 interface PlayerStore {
   position: Vector3;
   rotation: Vector3;
   movement: Record<MovementDirection, boolean>;
   velocity: Vector3;
   mass: number;
+  inventory: string[];
   setRotation: (x?: number, y?: number, z?: number) => void;
   setPosition: (x?: number, y?: number, z?: number) => void;
   setMovement: (direction: MovementDirection, value: boolean) => void;
@@ -22,6 +25,7 @@ export const usePlayerStore = create<PlayerStore>((set: SetState<PlayerStore>, g
   movement: { forward: false, left: false, backward: false, right: false },
   velocity: { x: 0, y: 0, z: 0 },
   mass: 100,
+  inventory: ["bb3478dc-1a1e-44e6-b5a8-e2a59613ee56"],
   setPosition(x, y, z) {
     set(
       produce((state) => ({
