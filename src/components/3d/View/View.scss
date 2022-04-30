@@ -1,0 +1,38 @@
+.stats {
+  top: 0px !important;
+  right: 0px !important;
+  left: auto !important;
+}
+
+.canvas {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f1f5;
+  z-index: 1;
+  position: relative;
+}
+
+.view {
+  background-color: #f0f1f5;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 2fr 10fr 2fr;
+  grid-template-rows: 10fr 2fr;
+  grid-template-areas: "scene-explorer canvas-wrapper property-explorer" "timeline timeline property-explorer";
+
+  .canvas-wrapper {
+    grid-area: canvas-wrapper;
+  }
+
+  .scene-explorer {
+    grid-area: scene-explorer;
+  }
+
+  .property-explorer {
+    grid-area: property-explorer;
+  }
+
+  .timeline {
+    grid-area: timeline;
+  }
+}

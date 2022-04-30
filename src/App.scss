@@ -1,5 +1,8 @@
 .app {
   height: 100vh;
-  color: #fefefe;
-  background-color: #212121;
+  width: 100vw;
+  color: #212121;
+  background-color: #f0f1f5;
+  display: grid;
+  grid-template-rows: 60px calc(100vh - 60px);
 }

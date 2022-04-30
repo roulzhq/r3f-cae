@@ -1,8 +1,6 @@
-import { View } from "components/Three";
-import { useEffect } from "react";
+import { View } from "components/3d";
+import { Header } from "components/UI";
 import { Route, Switch } from "react-router-dom";
-import { useSceneStore } from "store";
-import { SceneLoader } from "types/loaders";
 
 import "./App.scss";
 
@@ -15,16 +13,9 @@ function Page() {
 }
 
 function App() {
-  const setScene = useSceneStore((state) => state.setScene);
-
-  useEffect(() => {
-    SceneLoader.load("spaceship").then((scene) => {
-      setScene(scene);
-    });
-  }, []);
-
   return (
     <div className="app">
+      <Header />
       <Page />
     </div>
   );
