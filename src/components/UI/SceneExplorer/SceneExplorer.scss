@@ -1,4 +1,28 @@
+@use "styles/colors";
+
 .scene-explorer {
-  background-color: #ffffff;
-  border-right: 1px solid #2f2f2f;
+  background-color: colors.$white;
+  border-right: 1px solid colors.$grey-3;
+
+  .parts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &__item {
+      padding: 6px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid colors.$grey-2;
+
+      &--selected {
+        font-weight: 600;
+        color: colors.$primary;
+      }
+
+      &:hover {
+        background-color: colors.$primary-light;
+        color: colors.$primary-hover;
+      }
+    }
+  }
 }

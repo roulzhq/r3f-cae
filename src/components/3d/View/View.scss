@@ -1,3 +1,5 @@
+@use "styles/colors";
+
 .stats {
   top: 0px !important;
   right: 0px !important;
@@ -7,20 +9,26 @@
 .canvas {
   width: 100vw;
   height: 100vh;
-  background-color: #f0f1f5;
+  background-color: colors.$grey-1;
   z-index: 1;
   position: relative;
 }
 
 .view {
-  background-color: #f0f1f5;
   height: 100%;
   display: grid;
-  grid-template-columns: 2fr 10fr 2fr;
-  grid-template-rows: 10fr 2fr;
-  grid-template-areas: "scene-explorer canvas-wrapper property-explorer" "timeline timeline property-explorer";
+  grid-template-areas:
+    "toolbar toolbar toolbar"
+    "scene-explorer canvas-wrapper property-explorer"
+    "timeline timeline property-explorer";
+  position: relative;
+
+  .toolbar {
+    grid-area: toolbar;
+  }
 
   .canvas-wrapper {
+    position: relative;
     grid-area: canvas-wrapper;
   }
 

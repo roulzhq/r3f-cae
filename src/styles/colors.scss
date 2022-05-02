@@ -1,0 +1,43 @@
+$primary: var(--color-primary);
+$primary-hover: var(--color-primary-hover);
+$primary-active: var(--color-primary-active);
+$primary-light: var(--color-primary-light);
+$primary-shadow: var(--color-primary-shadow);
+
+// Whites
+$white: var(--color-white);
+$pure-white: var(--color-pure-white);
+
+// Blacks
+$black: var(--color-black);
+$pure-black: var(--color-pure-black);
+$black-shadow: var(--color-black-shadow);
+
+// Greys
+$grey-1: var(--color-grey-1);
+$grey-2: var(--color-grey-2);
+$grey-3: var(--color-grey-3);
+$grey-4: var(--color-grey-4);
+$grey-5: var(--color-grey-5);
+
+// Info colors
+$green: #{var(--color-green)};
+$green-dark: var(--color-green-dark);
+$green-light: var(--color-green-light);
+$yellow: var(--color-yellow);
+$yellow-dark: var(--color-yellow-dark);
+$yellow-light: var(--color-yellow-light);
+$red: var(--color-red);
+$red-dark: var(--color-red-dark);
+$red-hover: var(--color-red-hover);
+$red-light: var(--color-red-light);
+
+// Text
+$heading-text: $black;
+$body-text: $grey-5;
+$placeholder-text: $grey-3;
+
+// Disabled
+$disabled-text: $grey-3;
+$disabled-background: $grey-1;
+$disabled-border: $grey-2;

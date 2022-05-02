@@ -1,4 +1,10 @@
+@use "styles/colors";
+
 .property-explorer {
-  background-color: #ffffff;
-  border-left: 1px solid #2f2f2f;
+  padding: 16px;
+  background-color: colors.$white;
+  border-left: 1px solid colors.$grey-3;
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
 }

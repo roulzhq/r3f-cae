@@ -1,5 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
 
 export default function Controls() {
-  return <OrbitControls makeDefault minDistance={10} />;
+  return <OrbitControls makeDefault />;
 }

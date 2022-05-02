@@ -1,5 +1,30 @@
+@use "styles/colors";
+
 .hud {
   position: absolute;
+  top: 16px;
+  left: 16px;
 
   z-index: 2;
+
+  &__tool {
+    border: 1px solid colors.$grey-2;
+    background-color: colors.$pure-white;
+    border-radius: 20px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+
+    &__item {
+      padding: 8px;
+
+      &--selected {
+        color: colors.$primary;
+      }
+
+      &:hover {
+        color: colors.$primary-hover;
+      }
+    }
+  }
 }

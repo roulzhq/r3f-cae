@@ -6,6 +6,8 @@ import { createBrowserHistory } from "history";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import "./icons";
+
 import "./index.scss";
 import "@fontsource/roboto";
 

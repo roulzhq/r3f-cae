@@ -1,0 +1,27 @@
+@use "./variables";
+
+@mixin transition($duration: 100ms, $prop: all, $timing: ease-in-out) {
+  transition: $duration $prop $timing;
+}
+
+@mixin border($color, $thickness: 1px, $style: solid) {
+  border: $thickness $style $color;
+}
+
+@mixin border-radius {
+  border-radius: variables.$border-radius;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin box-shadow($strength: 1) {
+  @if $strength == 1 {
+    box-shadow: 0 1px 6px #0000000d;
+  } @else if $strength == 2 {
+    box-shadow: 0 1px 15px #0000000d;
+  }
+}
