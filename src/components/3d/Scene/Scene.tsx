@@ -9,7 +9,7 @@ import { roundVector, vectorEquals } from "utils/three";
 import BasePart from "../Part/Part";
 
 export default function Scene(): JSX.Element {
-  const [parts, updatePart] = useSceneStore((store) => [store.parts, store.updatePart]);
+  const [parts, updatePart, setFocus] = useSceneStore((store) => [store.parts, store.updatePart, store.setFocus]);
   const [selectedPart, hoveringPart, selectedPartRef, setSelectedPart, setHoveringPart, setSelectedPartRef] =
     usePartStore((store) => [
       store.selectedPart,
@@ -51,6 +51,7 @@ export default function Scene(): JSX.Element {
             isSelected={selectedPart === part.id}
             isHovering={hoveringPart === part.id}
             onClick={(e) => setSelectedPart(part.id)}
+            onDoubleClick={(e) => setFocus(part.position)}
             onPointerEnter={(e) => setHoveringPart(part.id)}
             onPointerLeave={(e) => setHoveringPart(null)}
             setRef={selectedPart === part.id ? setSelectedPartRef : undefined}

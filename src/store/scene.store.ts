@@ -1,5 +1,6 @@
 import produce from "immer";
-import { Camera, Mesh } from "three";
+import { Camera, Mesh, Vector4 } from "three";
+import { Vector3 } from "types";
 import { Part } from "types/part";
 import create, { SetState, GetState } from "zustand";
 
@@ -39,13 +40,16 @@ const DEFAULT_PARTS: Record<string, Part> = {
 interface SceneStore {
   parts: Record<string, Part>;
   cameraRef: React.MutableRefObject<Camera | undefined> | null;
+  focus: Vector3;
   setCameraRef: (ref: React.MutableRefObject<Camera | undefined>) => void;
   updatePart: (id: string, part: Partial<Part>) => void;
+  setFocus: (focus: Vector3) => void;
 }
 
 export const useSceneStore = create<SceneStore>((set: SetState<SceneStore>, get: GetState<SceneStore>) => ({
   parts: DEFAULT_PARTS,
   cameraRef: null,
+  focus: [0, 0, 0],
   setCameraRef: (cameraRef) => set(() => ({ cameraRef })),
   updatePart: (id, part) =>
     set(
@@ -53,4 +57,5 @@ export const useSceneStore = create<SceneStore>((set: SetState<SceneStore>, get:
         state.parts[id] = { ...state.parts[id], ...part };
       })
     ),
+  setFocus: (focus) => set(() => ({ focus })),
 }));

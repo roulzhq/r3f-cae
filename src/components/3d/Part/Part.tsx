@@ -20,6 +20,7 @@ export interface PartProps extends Part {
   isSelected?: boolean;
   isHovering?: boolean;
   onClick?: (e: ThreeEvent<MouseEvent>) => void;
+  onDoubleClick?: (e: ThreeEvent<MouseEvent>) => void;
   onPointerEnter?: (e: ThreeEvent<PointerEvent>) => void;
   onPointerLeave?: (e: ThreeEvent<PointerEvent>) => void;
   setRef?: (ref: any) => void;
@@ -36,6 +37,7 @@ export default function BasePart({
   isSelected = false,
   isHovering = false,
   onClick = () => {},
+  onDoubleClick = () => {},
   onPointerEnter = () => {},
   onPointerLeave = () => {},
   setRef,
@@ -57,6 +59,7 @@ export default function BasePart({
         rotation={rotation}
         scale={scale}
         onClick={onClick}
+        onDoubleClick={onDoubleClick}
         onPointerEnter={onPointerEnter}
         onPointerLeave={onPointerLeave}
         ref={ref}
