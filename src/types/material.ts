@@ -1,1 +1,1 @@
-export type MaterialType = "basic" | "phong";
+export type MaterialType = "basic" | "phong" | "shader";

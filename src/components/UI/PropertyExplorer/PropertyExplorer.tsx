@@ -34,6 +34,7 @@ export default function PropertyExplorer() {
           options={[
             { value: "basic", label: "Basic Material" },
             { value: "phong", label: "Phong Material" },
+            { value: "shader", label: "Shader Material" },
           ]}
           onChange={(material) => updatePart(part.id, { material })}
         />

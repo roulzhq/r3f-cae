@@ -1,12 +1,18 @@
 import { TransformControls } from "@react-three/drei";
+import { extend } from "@react-three/fiber";
+import * as THREE from "three";
+
 import { useControlsStore } from "store/controls.store";
 import { usePartStore } from "store/partStore";
 import { useSceneStore } from "store/scene.store";
-import { Event } from "three";
 import { Part } from "types/part";
 import { meshToPart } from "utils/part";
 import { roundVector, vectorEquals } from "utils/three";
+import { ColorShiftMaterial } from "3d/shaders";
+
 import BasePart from "../Part/Part";
+
+extend({ ColorShiftMaterial });
 
 export default function Scene(): JSX.Element {
   const [parts, updatePart, setFocus] = useSceneStore((store) => [store.parts, store.updatePart, store.setFocus]);
@@ -22,7 +28,7 @@ export default function Scene(): JSX.Element {
 
   const selectedTool = useControlsStore((controls) => controls.selectedTool);
 
-  const handleTransform = (e?: Event) => {
+  const handleTransform = (e?: THREE.Event) => {
     // Compare the id to the meshes userdata id to prevent updating the wrong part
     if (selectedPart && selectedPartRef?.current && selectedPart === selectedPartRef.current.userData.partId) {
       const part = meshToPart(selectedPartRef.current);

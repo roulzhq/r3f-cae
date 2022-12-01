@@ -1,7 +1,9 @@
 import { Box, Plane, Sphere } from "@react-three/drei";
-import { ThreeEvent } from "@react-three/fiber";
+import { ThreeEvent, useFrame } from "@react-three/fiber";
 import { Select } from "@react-three/postprocessing";
-import { useEffect, useRef } from "react";
+
+import { ColorShiftMaterial } from "3d/shaders";
+import { useEffect, useRef, useState } from "react";
 import { Part } from "types/part";
 
 const partMap = {
@@ -13,6 +15,10 @@ const partMap = {
 const materialMap = {
   basic: (color: string) => <meshBasicMaterial color={color} />,
   phong: (color: string) => <meshPhongMaterial color={color} />,
+  shader: (color: string, time: number = 1) => (
+    // @ts-ignore
+    <colorShiftMaterial key={ColorShiftMaterial.key} color={color} time={time} />
+  ),
 };
 
 export interface PartProps extends Part {
@@ -42,6 +48,13 @@ export default function BasePart({
   onPointerLeave = () => {},
   setRef,
 }: PartProps) {
+  const [time, setTime] = useState(0);
+
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    setTime(t);
+  });
+
   const ref = useRef();
   const PartGeo = partMap[type];
   const PartMaterial = materialMap[material];
@@ -67,7 +80,7 @@ export default function BasePart({
           partId: id,
         }}
       >
-        {PartMaterial(color)}
+        {PartMaterial(color, time)}
       </PartGeo>
     </Select>
   );
